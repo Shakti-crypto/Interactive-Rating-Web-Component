@@ -1,0 +1,231 @@
+/* ------------------------------- */
+/* -------Custom Properties------- */
+/* ------------------------------- */
+
+:root{
+    /* Colors */
+    --Orange:25, 97%, 53%;
+    --White:0, 0%, 100%;
+    --Light-Grey:217, 12%, 63%;
+    --Medium-Grey:216, 12%, 54%;
+    --Dark-Blue:213, 19%, 18%;
+    --Very-Dark-Blue:216, 12%, 8%;
+
+    /* Font-Family */
+    --ff-overpass:'Overpass', sans-serif;
+
+    /* Font-Size */
+    --fs-200:0.8rem;
+
+    /* Font-Weight */
+    --fw-400:400;
+    --fw-700:700;
+
+    /* Circular button width */
+    --circular-button-width:2.5rem;
+}
+
+
+/* -------------------- */
+/* -------RESETS------- */
+/* -------------------- */
+
+/* Setting box-sizing */
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+}
+
+/* Setting default margins to 0 */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+picture,
+figure{
+    margin: 0;
+}
+
+/* Setting default font weight because bold font is rarely used anywhere */
+body,
+h1,
+h2,
+h3,
+h4,
+p{
+    font-weight: 400;
+}
+
+/* Setting no styling to ordered and unordered lists */
+ul[role="list"],
+ol[role="list"]{
+    list-style: none;
+}
+
+/* Setting core body defaults */
+body{
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Making images easier to work with */
+img,
+picture{
+    max-width: 100%;
+    display: block;
+}
+
+/* Inheriting fonts for these elements becaue they don't do it by default */
+input,
+button,
+textarea,
+select{
+    font:inherit;
+}
+
+/* remove animations for people who've turned them off */
+@media (prefers-reduced-motion: reduce) {  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+}
+
+/* ------------------------------ */
+/* -------Utility Classes-------- */
+/* ------------------------------ */
+
+.grid{
+    display: grid;
+    gap: var(--gap,1rem);
+}
+
+.grid-place-items-center{
+    place-items: center;
+}
+
+.flex{
+    display: flex;
+    gap: var(--gap,1rem);
+}
+
+.flow > *+*{
+    margin-top: var(--flow-space,1rem);
+}
+
+.circular-button{
+    width: var(--circular-button-width);
+    aspect-ratio: 1;
+    border: none;
+    background-color: hsl(var(--Medium-Grey),0.16);
+    border-radius: 50%;
+}
+
+.text-white{
+    color: hsl(var(--White));
+}
+.text-light-grey{
+    color: hsl(var(--Light-Grey));
+}
+.text-orange{
+    color: hsl(var(--Orange));
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.letter-spacing-1{
+    letter-spacing: 2px;
+}
+
+.fs-200{
+    font-size: var(--fs-200);
+}
+
+.ff-overpass{
+    font-family: var(--ff-overpass);
+}
+
+.fw-400{
+    font-weight: var(--fw-400);
+}
+.fw-700{
+    font-weight: var(--fw-700);
+}
+
+/* -------------------------------- */
+/* -------Component Classes-------- */
+/* -------------------------------- */
+
+body{
+    background-color: hsl(var(--Very-Dark-Blue));
+}
+
+main{
+    max-width: 20rem;
+    min-height: 22.5rem;
+    /* background:radial-gradient(circle closest-corner,var(--Medium-Grey),var(--Dark-Blue)) */
+    background: hsl(var(--Dark-Blue));
+    padding: 1.5rem;
+    border: none;
+    border-radius: 15px;
+}
+@media (min-width:35em) {
+    main{
+        max-width: 23rem;
+    }
+}
+
+.rating{
+    width: 100%;
+    /* --gap:2.4rem; */
+    justify-content: space-around;
+}
+
+.rating>button:not(.button-selected):hover,
+.rating>button:not(.button-selected):focus{
+    background-color: hsl(var(--Orange));
+    color: hsl(var(--White));
+    cursor: pointer;
+}
+
+.rating>.button-selected{
+    color: hsl(var(--White));
+    background-color: hsl(var(--Light-Grey));
+}
+.submit-button{
+    width: 100%;
+    padding-block: 0.5rem;
+    background-color: hsl(var(--Orange));
+    border: none;
+    border-radius: 50px;
+}
+.submit-button:hover,
+.submit-button:focus{
+    cursor: pointer;
+    background-color: hsl(var(--White));
+    color: var(--Orange);
+}
+/* Thank-you-state */
+.thank-you-state{
+    text-align: center;
+}
+.thank-you-state>.rating-box{
+    background-color: hsl(var(--Medium-Grey),0.16);
+    display: inline-block;
+    padding-inline:0.9rem;
+    padding-block: 0.2rem;
+    border: none;
+    border-radius: 20px;
+}
+.thank-you-state>img{
+    margin: auto;
+}

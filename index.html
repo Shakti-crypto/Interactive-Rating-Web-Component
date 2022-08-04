@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+    <title>Interactive-Rating</title>
+</head>
+<body  class="grid grid-place-items-center">
+    <main class="grid grid-place-items-center">
+        <!-- Rating state start -->
+
+        <article class="rating-state flow">
+            <div class="circular-button grid grid-place-items-center"><img src="images/icon-star.svg" alt=""></div>
+
+            <h1 class="ff-overpass fw-700 text-white">How did we do?</h1>
+
+            <p class="ff-overpass text-light-grey">Please let us know how we did with your support request. All feedback is appreciated 
+                to help us improve our offering!</p>
+        
+            <div class="rating flex">
+                <button class="circular-button fs-200 ff-overpass text-light-grey">1</button>
+                <button class="circular-button fs-200 ff-overpass text-light-grey">2</button>
+                <button class="circular-button fs-200 ff-overpass text-light-grey">3</button>
+                <button class="circular-button fs-200 ff-overpass text-light-grey">4</button>
+                <button class="circular-button fs-200 ff-overpass text-light-grey">5</button>
+            </div>
+        
+            <button class="submit-button text-white ff-overpass fs-200 letter-spacing-1 uppercase">Submit</button>
+        </article>
+
+        <!-- Rating state end -->
+
+        <!-- Thank you state start -->
+
+        <article hidden class="thank-you-state flow">
+            <img src="images/illustration-thank-you.svg" alt="">
+            <p class="rating-box text-orange">You selected <span id="rating-span"></span> out of 5</p> 
+
+            <div>
+                <h2 class="ff-overpass fw-700 text-white">Thank you!</h2>
+                <p class="text-light-grey">We appreciate you taking the time to give a rating. If you ever need more support, 
+            don’t hesitate to get in touch!</p> 
+            </div>
+        </article>
+
+    <!-- Thank you state end -->
+</main>
+
+<script src="index.js"></script>
+</body>
+</html>
